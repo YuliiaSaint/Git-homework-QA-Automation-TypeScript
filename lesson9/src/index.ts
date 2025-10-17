@@ -1,4 +1,5 @@
 import { IVehicle } from './interfaces/i-vehicle';
+import { IServiceable } from './interfaces/i-serviceable';
 import { Car } from './vehicles/car';
 import { Motorcycle } from './vehicles/motorcycle';
 import { Bus } from './vehicles/bus';
@@ -9,7 +10,10 @@ function useVehicle(vehicle: IVehicle): void {
     vehicle.drive(80);
     vehicle.stop();
 }
-
+// Функція, яка працює з будь яким сервісованим типом (ISP + DIP)
+function performService(item: IServiceable): void {
+    item.service();
+}
 // Створюємо екземпляри класів
 const myCar = new Car('Toyota', 'Corolla', 2020);
 const myMoto = new Motorcycle('Honda', 'CBR600', 2018);
@@ -18,3 +22,5 @@ const myBus = new Bus('Mercedes', 'Citaro', 2018);
 useVehicle(myCar);
 useVehicle(myMoto);
 useVehicle(myBus);
+//окремий інтерфейс обслуговування
+performService(myBus);

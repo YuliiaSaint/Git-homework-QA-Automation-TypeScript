@@ -1,7 +1,7 @@
 export interface IVehicle {
-    brand: string;
-    model: string;
-    year: number;
+    get Brand(): string;
+    get Model(): string;
+    get Year(): number;
 
     start(): void;
     stop(): void;
