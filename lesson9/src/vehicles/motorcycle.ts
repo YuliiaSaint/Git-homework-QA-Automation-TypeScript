@@ -3,7 +3,7 @@ export class Motorcycle implements IVehicle {
     private brand: string;
     private model: string;
     private year: number;
-    constructor(brand: string, model: string, year: number) {
+    public constructor(brand: string, model: string, year: number) {
         this.brand = brand;
         this.model = model;
         this.year = year;
